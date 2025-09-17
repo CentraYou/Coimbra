@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planetas AR</title>
+  <meta name="description" content="Explora os planetas do Sistema Solar em Realidade Aumentada no teu telemóvel." />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header>
+    <img id="mall-logo" alt="Shopping Logo" src="https://www.forum-coimbra.com/wp-content/uploads/sites/23/2024/09/header-logo-1-1.png" style="height:28px;object-fit:contain" />
+    <div class="badge" id="planet-badge">Planeta</div>
+    <div class="note">Aponte ao chão e toque para colocar</div>
+  </header>
+
+  <model-viewer id="viewer"
+    ar ar-modes="webxr scene-viewer quick-look"
+    camera-controls interaction-prompt="auto"
+    shadow-intensity="0" exposure="1"
+    environment-image="neutral"
+    autoplay
+    style="--poster-color: transparent;">
+  </model-viewer>
+
+  <section id="info">
+    <h1 id="planet-title">Planeta</h1>
+    <ul id="bullets"></ul>
+    <ul class="inline">
+      <li><strong>Dica:</strong> toque com dois dedos para redimensionar.</li>
+      <li><strong>Segurança:</strong> atenção ao redor ao usar AR.</li>
+    </ul>
+  </section>
+
+  <div class="bar">
+    <button class="primary" id="btn-ar">Ativar AR</button>
+    <button id="btn-center">Recentra</button>
+    <button id="btn-snapshot">Foto</button>
+  </div>
+
+  <script type="module">
+    const params = new URLSearchParams(location.search);
+    const key = (params.get("planet") || "marte").toLowerCase();
+    const viewer = document.getElementById("viewer");
+    const title = document.getElementById("planet-title");
+    const badge = document.getElementById("planet-badge");
+    const bullets = document.getElementById("bullets");
+
+    async function init() {
+      let dataMap = {};
+      try {
+        const res = await fetch("/planets.json");
+        dataMap = await res.json();
+      } catch(e) {
+        console.warn("Não foi possível carregar planets.json", e);
+      }
+      const data = dataMap[key] || dataMap["marte"] || {};
+      title.textContent = data.name || "Planeta";
+      badge.textContent = data.name || "Planeta";
+
+      if (data.glb) viewer.src = data.glb;
+      if (data.usdz) viewer.setAttribute("ios-src", data.usdz);
+
+      const s = data.scale || 1.2;
+      viewer.setAttribute("scale", `${s} ${s} ${s}`);
+
+      bullets.innerHTML = (data.bullets || []).map(b => `<li>${b}</li>`).join("");
+
+      document.getElementById("btn-ar").onclick = () => viewer.activateAR();
+      document.getElementById("btn-center").onclick = () => viewer.resetTurntableRotation();
+      document.getElementById("btn-snapshot").onclick = async () => {
+        try {
+          const canvas = viewer.renderedScene || viewer.shadowRoot?.querySelector("canvas");
+          if (!canvas) return alert("Não disponível neste dispositivo.");
+          const snapshot = canvas.toDataURL("image/png");
+          const a = document.createElement("a");
+          a.href = snapshot;
+          a.download = `${key}_ar.png`;
+          a.click();
+        } catch (e) {
+          alert("Não foi possível gerar a imagem neste dispositivo.");
+        }
+      };
+
+      // Analytics básico (substitua por GA/Pixel)
+      try {
+        const utm = Object.fromEntries([...params.entries()].filter(([k]) => k.startsWith("utm_")));
+        console.log("AR View", { planet: key, ...utm });
+      } catch {}
+    }
+    init();
+  </script>
+
+  <footer>
+    © 2025 Planetas AR — Demo. Esta experiência usa WebXR/Quick Look. Se o teu dispositivo não suportar AR, verás um modelo 3D interativo.
+  </footer>
+</body>
+</html>
