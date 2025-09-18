@@ -9,7 +9,7 @@
 </head>
 <body>
   <model-viewer id="viewer"
-    ar ar-modes="webxr"
+    ar ar-modes="webxr scene-viewer quick-look"
     camera-controls interaction-prompt="auto"
     auto-rotate auto-rotate-delay="0"
     style="--poster-color: transparent;">
@@ -28,7 +28,7 @@
     }
     init();
 
-    // Animated moons (WebXR in-page)
+    // Animated moons when running WebXR in-page (JS)
     async function animateMoons() {
       await viewer.updateComplete;
       const model = viewer.model;
