@@ -1,101 +1,13 @@
 {
-  "mercurio": {
-    "name": "Mercúrio",
-    "glb": "/models/mercury.glb",
-    "usdz": "/models/mercury.usdz",
-    "bullets": [
-      "O menor e mais próximo do Sol",
-      "Dia muito quente, noite gelada",
-      "Sem luas"
-    ],
-    "scale": 1.2
-  },
-  "venus": {
-    "name": "Vénus",
-    "glb": "/models/venus.glb",
-    "usdz": "/models/venus.usdz",
-    "bullets": [
-      "Atmosfera densa e tóxica",
-      "Rotação retrógrada",
-      "Temperatura média ~465°C"
-    ],
-    "scale": 1.3
-  },
-  "terra": {
-    "name": "Terra",
-    "glb": "/models/earth.glb",
-    "usdz": "/models/earth.usdz",
-    "bullets": [
-      "Único planeta com vida conhecida",
-      "71% de água",
-      "Uma lua"
-    ],
-    "scale": 1.4
-  },
   "marte": {
     "name": "Marte",
-    "glb": "/models/mars.glb",
-    "usdz": "/models/mars.usdz",
+    "glb": "/models/mars_system.glb",
+    "usdz": "/models/mars_system.usdz",
     "bullets": [
       "O planeta vermelho",
       "Vulcão Olympus Mons",
       "Duas luas: Fobos e Deimos"
     ],
     "scale": 1.4
-  },
-  "jupiter": {
-    "name": "Júpiter",
-    "glb": "/models/jupiter.glb",
-    "usdz": "/models/jupiter.usdz",
-    "bullets": [
-      "Maior do sistema solar",
-      "Grande Mancha Vermelha",
-      "Mais de 90 luas"
-    ],
-    "scale": 2.0
-  },
-  "saturno": {
-    "name": "Saturno",
-    "glb": "/models/saturn.glb",
-    "usdz": "/models/saturn.usdz",
-    "bullets": [
-      "Anéis icónicos",
-      "Baixa densidade",
-      "Dezenas de luas"
-    ],
-    "scale": 2.0
-  },
-  "urano": {
-    "name": "Urano",
-    "glb": "/models/uranus.glb",
-    "usdz": "/models/uranus.usdz",
-    "bullets": [
-      "Inclinação axial ~98° (roda de lado)",
-      "Gigante gelado",
-      "Anéis ténues"
-    ],
-    "scale": 1.6
-  },
-  "neptuno": {
-    "name": "Neptuno",
-    "glb": "/models/neptune.glb",
-    "usdz": "/models/neptune.usdz",
-    "bullets": [
-      "Ventos supersónicos",
-      "Gigante gelado",
-      "Lua principal: Tritão"
-    ],
-    "scale": 1.6
-  },
-  "plutao": {
-    "name": "Plutão",
-    "glb": "/models/pluto.glb",
-    "usdz": "/models/pluto.usdz",
-    "bullets": [
-      "Planeta anão da Cintura de Kuiper",
-      "Região em forma de coração (Tombaugh Regio)",
-      "Órbita excêntrica e inclinada"
-    ],
-    "scale": 1.2
   }
 }
