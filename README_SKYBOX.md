@@ -1,0 +1,1 @@
+Skybox configurado. Podes trocar por um HDRI real em /assets.

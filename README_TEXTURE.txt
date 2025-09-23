@@ -1,0 +1,1 @@
+Versão com detalhe pode usar textura global equiretangular.

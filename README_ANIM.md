@@ -1,0 +1,1 @@
+Exporta GLB animado no Blender e converte para USDZ.
