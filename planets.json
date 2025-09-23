@@ -1,13 +1,9 @@
 {
   "marte": {
     "name": "Marte",
-    "glb": "/models/mars_system_textured.glb",
+    "glb": "/models/mars_system.glb",
     "usdz": "/models/mars_system.usdz",
-    "bullets": [
-      "O planeta vermelho",
-      "Vulcão Olympus Mons",
-      "Duas luas: Fobos e Deimos"
-    ],
+    "bullets": [],
     "scale": 1.4
   }
 }
