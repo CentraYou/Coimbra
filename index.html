@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planetas AR</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <model-viewer id="viewer"
+    ar ar-modes="webxr scene-viewer quick-look"
+    camera-controls interaction-prompt="auto"
+    auto-rotate auto-rotate-delay="0"
+    environment-image="neutral"
+    exposure="1.5"
+    style="--poster-color: transparent; --progress-bar-color: #6a8cff;">
+  </model-viewer>
+
+  <section id="info">
+    <h1 id="planet-title">Marte</h1>
+    <ul id="bullets"></ul>
+  </section>
+
+  <script type="module">
+    const params = new URLSearchParams(location.search);
+    const key = (params.get('planet') || 'marte').toLowerCase();
+    const viewer = document.getElementById('viewer');
+    const title = document.getElementById('planet-title');
+    const bullets = document.getElementById('bullets');
+
+    fetch('./planets.json').then(r=>r.json()).then(data=>{
+      const cfg = data[key] || data['marte'];
+      title.textContent = cfg.name || 'Planeta';
+      bullets.innerHTML = (cfg.bullets||[]).map(b=>`<li>${b}</li>`).join('');
+      const glb = cfg.glb.startsWith('.') ? cfg.glb : ('./'+cfg.glb.replace(/^\/?/,''));
+      const usdz = cfg.usdz.startsWith('.') ? cfg.usdz : ('./'+cfg.usdz.replace(/^\/?/,''));
+      viewer.src = glb;
+      viewer.setAttribute('ios-src', usdz);
+      const s = cfg.scale || 1.4;
+      viewer.setAttribute('scale', `${s} ${s} ${s}`);
+    });
+  </script>
+</body>
+</html>
