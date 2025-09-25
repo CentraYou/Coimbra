@@ -11,3 +11,10 @@
     "scale": 1.4
   }
 }
+"livro": {
+  "name": "Livro (AR)",
+  "glb": "/models/book_open.glb",
+  "usdz": "/models/book_open.usdz",
+  "bullets": ["Livro aberto em AR", "Texto na página esquerda", "Toque para posicionar no espaço"],
+  "scale": 1.0
+}
