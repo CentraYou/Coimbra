@@ -10,8 +10,7 @@
     ],
     "scale": 1.4
   }
-}
-{
+},
 "livro": {
   "name": "Livro (AR)",
   "glb": "/models/book_open.glb",
