@@ -12,7 +12,7 @@
   },
   "livro": {
     "name": "Livro (AR)",
-    "glb": "/models/book_open.glb",
+    "glb": "/models/book_open.glbf",
     "usdz": "/models/book_open.usdz",
     "bullets": [
       "Livro aberto em AR",
