@@ -1,0 +1,395 @@
+{
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0",
+    "generator": "https://github.com/mikedh/trimesh"
+  },
+  "accessors": [
+    {
+      "componentType": 5125,
+      "type": "SCALAR",
+      "bufferView": 0,
+      "count": 36,
+      "max": [
+        7
+      ],
+      "min": [
+        0
+      ]
+    },
+    {
+      "componentType": 5126,
+      "type": "VEC3",
+      "byteOffset": 0,
+      "bufferView": 1,
+      "count": 8,
+      "max": [
+        0.15000000596046448,
+        0.0020000000949949026,
+        0.10499999672174454
+      ],
+      "min": [
+        -0.15000000596046448,
+        -0.0020000000949949026,
+        -0.10499999672174454
+      ]
+    },
+    {
+      "componentType": 5125,
+      "type": "SCALAR",
+      "bufferView": 2,
+      "count": 6,
+      "max": [
+        3
+      ],
+      "min": [
+        0
+      ]
+    },
+    {
+      "componentType": 5126,
+      "type": "VEC3",
+      "byteOffset": 0,
+      "bufferView": 3,
+      "count": 4,
+      "max": [
+        0.15000000596046448,
+        0.10499999672174454,
+        0.002099999925121665
+      ],
+      "min": [
+        -0.15000000596046448,
+        -0.10499999672174454,
+        0.002099999925121665
+      ]
+    },
+    {
+      "componentType": 5126,
+      "type": "VEC2",
+      "byteOffset": 0,
+      "bufferView": 5,
+      "count": 4,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Book_LeftBase",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1
+          },
+          "indices": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Book_RightBase",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1
+          },
+          "indices": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Book_LeftPage",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 3,
+            "TEXCOORD_0": 4
+          },
+          "indices": 2,
+          "mode": 4,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Book_RightPage",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 3,
+            "TEXCOORD_0": 4
+          },
+          "indices": 2,
+          "mode": 4,
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "uri": "book_left_page.png"
+    },
+    {
+      "uri": "book_right_page.png"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0
+    },
+    {
+      "source": 1
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughnessFactor": 1.0,
+        "metallicFactor": 0.0
+      },
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_unlit": {}
+      },
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "emissiveTexture": {
+        "index": 0
+      }
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughnessFactor": 1.0,
+        "metallicFactor": 0.0
+      },
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_unlit": {}
+      },
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "emissiveTexture": {
+        "index": 1
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "name": "world",
+      "children": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "Book_LeftBase",
+      "mesh": 0,
+      "matrix": [
+        0.9702957262759966,
+        1.4813443754489663e-17,
+        -0.24192189559966776,
+        0.0,
+        -0.24192189559966776,
+        5.941347777051278e-17,
+        -0.9702957262759966,
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17,
+        0.0,
+        -0.155,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Book_RightBase",
+      "mesh": 1,
+      "matrix": [
+        0.9702957262759966,
+        -1.4813443754489663e-17,
+        0.24192189559966776,
+        0.0,
+        0.24192189559966776,
+        5.941347777051278e-17,
+        -0.9702957262759966,
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17,
+        0.0,
+        0.155,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Book_LeftPage",
+      "mesh": 2,
+      "matrix": [
+        0.9702957262759966,
+        1.4813443754489663e-17,
+        -0.24192189559966776,
+        0.0,
+        -0.24192189559966776,
+        5.941347777051278e-17,
+        -0.9702957262759966,
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17,
+        0.0,
+        -0.155,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Book_RightPage",
+      "mesh": 3,
+      "matrix": [
+        0.9702957262759966,
+        -1.4813443754489663e-17,
+        0.24192189559966776,
+        0.0,
+        0.24192189559966776,
+        5.941347777051278e-17,
+        -0.9702957262759966,
+        0.0,
+        0.0,
+        1.0,
+        6.123233995736766e-17,
+        0.0,
+        0.155,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "book_open.bin",
+      "byteLength": 144
+    },
+    {
+      "uri": "gltf_buffer_1.bin",
+      "byteLength": 96
+    },
+    {
+      "uri": "gltf_buffer_2.bin",
+      "byteLength": 24
+    },
+    {
+      "uri": "gltf_buffer_3.bin",
+      "byteLength": 48
+    },
+    {
+      "uri": "gltf_buffer_4.bin",
+      "byteLength": 5604
+    },
+    {
+      "uri": "gltf_buffer_5.bin",
+      "byteLength": 32
+    },
+    {
+      "uri": "gltf_buffer_6.bin",
+      "byteLength": 5568
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 144
+    },
+    {
+      "buffer": 1,
+      "byteOffset": 0,
+      "byteLength": 96
+    },
+    {
+      "buffer": 2,
+      "byteOffset": 0,
+      "byteLength": 24
+    },
+    {
+      "buffer": 3,
+      "byteOffset": 0,
+      "byteLength": 48
+    },
+    {
+      "buffer": 4,
+      "byteOffset": 0,
+      "byteLength": 5604
+    },
+    {
+      "buffer": 5,
+      "byteOffset": 0,
+      "byteLength": 32
+    },
+    {
+      "buffer": 6,
+      "byteOffset": 0,
+      "byteLength": 5568
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9729,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_unlit"
+  ],
+  "extensionsRequired": [
+    "KHR_materials_unlit"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "marte": {
+    "name": "Marte",
+    "glb": "/models/mars_system_textured.glb",
+    "usdz": "/models/mars_system.usdz",
+    "bullets": [
+      "O planeta vermelho",
+      "Vulcão Olympus Mons",
+      "Duas luas: Fobos e Deimos"
+    ],
+    "scale": 1.4
+  },
+  "livro": {
+    "name": "Livro (AR)",
+    "glb": "/models/book_open.gltf",
+    "usdz": "/models/book_open.usdz",
+    "bullets": [
+      "Livro aberto em AR",
+      "Páginas com imagem externa (.png)",
+      "Toque para posicionar na parede"
+    ],
+    "scale": 1.0
+  }
+}
